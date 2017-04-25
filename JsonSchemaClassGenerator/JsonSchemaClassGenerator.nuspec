@@ -14,7 +14,10 @@
     <copyright>Copyright 2017</copyright>
     <tags>json schema</tags>
     <dependencies>
+      <dependency id="NJsonSchema" version="8.33.6323.36213" />
+      <dependency id="NJsonSchema.CodeGeneration" version="8.33.6323.36234" />
       <dependency id="NJsonSchema.CodeGeneration.CSharp" version="8.33.6323.36234" />
+      <dependency id="Newtonsoft.Json" version="9.0.1" />
     </dependencies>
   </metadata>
 

@@ -5,4 +5,5 @@ packages/
 .DS_Store
 *.*.iml
 **/Schemas/*Schema.cs
-.suo
+*.suo
+*.nupkg
