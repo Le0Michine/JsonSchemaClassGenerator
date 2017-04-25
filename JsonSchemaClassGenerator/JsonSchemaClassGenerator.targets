@@ -1,0 +1,23 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <AvailableItemName Include="GenerateJsonClasses"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <JsonClassesGeneratorPath Condition="'$(JsonClassesGeneratorPath)' == ''">$(MSBuildThisFileDirectory)</JsonClassesGeneratorPath>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectName Condition="'$(ProjectName)' == ''">$(MSBuildProjectName)</ProjectName>
+        <InputFiles>@(GenerateJsonClasses)</InputFiles>
+        <OutputDirectory>.\Schemas\</OutputDirectory>
+    </PropertyGroup>
+
+    <UsingTask TaskName="GenerationUtility" AssemblyFile="$(JsonClassesGeneratorPath)..\lib\net45\JsonSchemaClassGenerator.dll"/>
+
+    <Target Name="JsonClass" Inputs="@(GenerateJsonClasses)" Outputs="@(GenerateJsonClasses -> '%(filename).cs')">
+        <GenerationUtility Namespace="$(ProjectName)" InputFiles="$(InputFiles)" OutputFiles="$(OutputDirectory)"/>
+    </Target>
+
+    <Target Name="BeforeCompile" DependsOnTargets="JsonClass"/>
+</Project>

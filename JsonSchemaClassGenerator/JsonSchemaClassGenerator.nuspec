@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Lev_Mishin</authors>
+    <owners>Lev_Mishin</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/Le0Michine/JsonSchemaClassGenerator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MSBuild action to generate classes from json schema</description>
+    <releaseNotes>MSBuild action to generate classes from json schema.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>json schema</tags>
+    <dependencies>
+      <dependency id="NJsonSchema.CodeGeneration.CSharp" version="8.33.6323.36234" />
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="JsonSchemaClassGenerator.targets" target="build" />
+
+    <file src="bin/NJsonSchema.dll" target="lib/net45" />
+    <file src="bin/NJsonSchema.CodeGeneration.dll" target="lib/net45" />
+    <file src="bin/NJsonSchema.CodeGeneration.CSharp.dll" target="lib/net45" />
+    <file src="bin/Newtonsoft.Json.dll" target="lib/net45" />
+  </files>
+</package>

@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "simpleTestSchema",
+  "type": "object",
+  "properties": {
+    "myArray": {
+      "$ref": "#/definitions/hArray"
+    }
+  },
+  "definitions": {
+    "complexObject1": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/complexObjectType"
+        }
+      }
+    },
+    "complexObject2": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/complexObjectType"
+        }
+      }
+    },
+    "hArray": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/definitions/complexObject1"
+          },
+          {
+            "$ref": "#/definitions/complexObject2"
+          }
+        ]
+      }
+    },
+    "complexObjectType": {
+      "type": "string",
+      "enum": [
+        "1",
+        "2"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "myArray": [
+    "stringItem1",
+    {
+      "type": "1",
+      "name": "complexObj1"
+    },
+    {
+      "type": "2",
+      "name": "complexObj2"
+    },
+    {
+      "name": "complexObj3"
+    }
+  ]
+}
